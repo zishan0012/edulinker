@@ -30,19 +30,19 @@ const CourseCard = ({ course }) => {
                     </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-brand-500 transition-colors line-clamp-2 leading-tight uppercase tracking-tight">
+                <h3 className="text-xl font-bold text-black group-hover:text-brand-500 transition-colors line-clamp-2 leading-tight uppercase tracking-tight">
                     {course.title}
                 </h3>
 
-                <div className="flex items-center gap-3 py-4 border-y border-slate-50">
-                    <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-500 font-black text-sm">
+                <div className="flex items-center gap-3 py-4 border-y border-neutral-50">
+                    <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center text-brand-500 font-black text-sm">
                         {course.instructor.charAt(0)}
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Instructor</span>
-                        <span className="text-sm font-bold text-slate-700">{course.instructor}</span>
+                        <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">Instructor</span>
+                        <span className="text-sm font-bold text-neutral-700">{course.instructor}</span>
                     </div>
-                    <div className="ml-auto flex items-center gap-1.5 text-slate-400 font-bold">
+                    <div className="ml-auto flex items-center gap-1.5 text-neutral-400 font-bold">
                         <Clock size={14} />
                         <span className="text-[10px] uppercase">{course.duration}</span>
                     </div>
@@ -50,8 +50,8 @@ const CourseCard = ({ course }) => {
 
                 <div className="pt-4 flex items-center justify-between mt-auto">
                     <div className="flex flex-col">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Course Fee</span>
-                        <span className="text-2xl font-black text-slate-900">${course.price}</span>
+                        <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">Course Fee</span>
+                        <span className="text-2xl font-black text-black">${course.price}</span>
                     </div>
                     <Link to={`/courses/${course.id}`} className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all duration-300">
                         <ArrowRight size={20} />

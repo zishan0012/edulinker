@@ -5,10 +5,10 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, Send } fro
 
 const Footer = () => {
     return (
-        <footer className="footer-signature bg-[#0f172a] text-slate-300 pt-24 pb-12 overflow-hidden relative">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/5 rounded-full blur-[100px] -translate-y-1/2"></div>
+        <footer className="footer-signature bg-black text-neutral-400 pt-32 pb-16 overflow-hidden relative">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/5 rounded-full blur-[100px] -tranneutral-y-1/2"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-8 lg:px-12 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-20">
 
                     {/* Brand Column */}
@@ -17,9 +17,9 @@ const Footer = () => {
                             <span className="text-3xl font-extrabold tracking-tight text-white leading-none">
                                 Edu<span className="text-brand-500">Linker</span>
                             </span>
-                            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Global Training Solutions</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500">Global Training Solutions</span>
                         </Link>
-                        <p className="text-slate-400 leading-relaxed text-sm max-w-sm">
+                        <p className="text-neutral-400 leading-relaxed text-sm max-w-sm">
                             Advancing careers through specialized industry certifications and expert-led training programs. Your bridge to professional excellence in the digital age.
                         </p>
                         <div className="flex gap-3">
@@ -49,7 +49,7 @@ const Footer = () => {
                         <ul className="space-y-4">
                             {FOOTER_LINKS.company.map((link) => (
                                 <li key={link}>
-                                    <Link to="#" className="text-sm text-slate-400 hover:text-brand-500 hover:translate-x-1 transition-all inline-block">
+                                    <Link to="#" className="text-sm text-neutral-400 hover:text-brand-500 hover:tranneutral-x-1 transition-all inline-block">
                                         {link}
                                     </Link>
                                 </li>
@@ -62,7 +62,7 @@ const Footer = () => {
                         <ul className="space-y-4">
                             {FOOTER_LINKS.resources.map((link) => (
                                 <li key={link}>
-                                    <Link to="#" className="text-sm text-slate-400 hover:text-brand-500 hover:translate-x-1 transition-all inline-block">
+                                    <Link to="#" className="text-sm text-neutral-400 hover:text-brand-500 hover:tranneutral-x-1 transition-all inline-block">
                                         {link}
                                     </Link>
                                 </li>
@@ -79,7 +79,7 @@ const Footer = () => {
                                     <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                                         <MapPin className="text-brand-500" size={18} />
                                     </div>
-                                    <div className="text-sm leading-relaxed text-slate-400">
+                                    <div className="text-sm leading-relaxed text-neutral-400">
                                         456 Learning Blvd, Suite 100<br />
                                         Silicon Valley, CA 94025
                                     </div>
@@ -88,13 +88,13 @@ const Footer = () => {
                                     <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                                         <Phone className="text-brand-500" size={18} />
                                     </div>
-                                    <div className="text-sm text-slate-400 font-bold">+1 (234) 567-890</div>
+                                    <div className="text-sm text-neutral-400 font-bold">+1 (234) 567-890</div>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                                         <Mail className="text-brand-500" size={18} />
                                     </div>
-                                    <div className="text-sm text-slate-400">admissions@edulinker.com</div>
+                                    <div className="text-sm text-neutral-400">admissions@edulinker.com</div>
                                 </div>
                             </div>
                         </div>
@@ -105,11 +105,11 @@ const Footer = () => {
                                 <input
                                     type="email"
                                     placeholder="Your email address"
-                                    className="w-full pl-6 pr-14 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 transition-all font-medium text-sm"
+                                    className="w-full pl-6 pr-14 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-neutral-500 focus:outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 transition-all font-medium text-sm"
                                 />
                                 <button
                                     type="submit"
-                                    className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-brand-500 rounded-lg flex items-center justify-center text-white hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
+                                    className="absolute right-2 top-1/2 -tranneutral-y-1/2 w-10 h-10 bg-brand-500 rounded-lg flex items-center justify-center text-white hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
                                 >
                                     <Send size={18} />
                                 </button>
@@ -121,13 +121,13 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-8">
-                        <p className="text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                        <p className="text-[11px] font-bold text-neutral-500 uppercase tracking-widest">
                             &copy; {new Date().getFullYear()} EduLinker Global. All rights reserved.
                         </p>
                     </div>
                     <div className="flex gap-8">
                         {FOOTER_LINKS.legal.map(link => (
-                            <Link key={link} to="#" className="text-[11px] font-bold text-slate-500 hover:text-white transition-colors uppercase tracking-widest">
+                            <Link key={link} to="#" className="text-[11px] font-bold text-neutral-500 hover:text-white transition-colors uppercase tracking-widest">
                                 {link}
                             </Link>
                         ))}

@@ -5,22 +5,22 @@ const Contact = () => {
     return (
         <div className="main-content">
             {/* Hero */}
-            <section className="relative bg-white pt-20 pb-32 overflow-hidden">
+            <section className="relative bg-white pt-40 pb-32 overflow-hidden">
                 <div className="absolute inset-0 pattern-circuit opacity-[0.03]"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div className="container mx-auto px-8 lg:px-12 relative z-10 text-center">
                     <span className="text-brand-500 font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Get Support</span>
-                    <h1 className="text-5xl md:text-7xl font-bold text-slate-900 leading-tight mb-8 italic">
+                    <h1 className="text-5xl md:text-7xl font-bold text-black leading-tight mb-8 italic">
                         Get in <span className="gradient-text">Touch</span>
                     </h1>
-                    <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                    <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
                         Have questions about our curriculum or admission process? Our academic advisors are here to help you start your learning journey.
                     </p>
                 </div>
             </section>
 
-            <section className="py-24 bg-slate-50 relative">
+            <section className="py-32 bg-neutral-50 relative">
                 <div className="absolute inset-0 pattern-cubes opacity-[0.02]"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="container mx-auto px-8 lg:px-12 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
                         {/* Contact Details */}
@@ -35,9 +35,9 @@ const Contact = () => {
                                         {item.icon}
                                     </div>
                                     <div>
-                                        <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">{item.title}</h4>
-                                        <p className="text-base font-bold text-slate-900">{item.detail1}</p>
-                                        <p className="text-sm text-slate-500">{item.detail2}</p>
+                                        <h4 className="text-xs font-black text-neutral-400 uppercase tracking-widest mb-1">{item.title}</h4>
+                                        <p className="text-base font-bold text-black">{item.detail1}</p>
+                                        <p className="text-sm text-neutral-500">{item.detail2}</p>
                                     </div>
                                 </div>
                             ))}
@@ -55,29 +55,29 @@ const Contact = () => {
                         <div className="lg:col-span-2 glass-card bg-white p-10 md:p-16">
                             <div className="mb-10 flex items-center gap-4">
                                 <div className="w-12 h-px bg-brand-500"></div>
-                                <h3 className="text-xl font-bold text-slate-900 uppercase tracking-tight">Send a Message</h3>
+                                <h3 className="text-xl font-bold text-black uppercase tracking-tight">Send a Message</h3>
                             </div>
 
                             <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
-                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1">Full Name</label>
+                                    <label className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] ml-1">Full Name</label>
                                     <input
                                         type="text"
                                         placeholder="John Doe"
-                                        className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold placeholder:font-medium"
+                                        className="w-full px-6 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold placeholder:font-medium"
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1">Email Address</label>
+                                    <label className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] ml-1">Email Address</label>
                                     <input
                                         type="email"
                                         placeholder="john@example.com"
-                                        className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold placeholder:font-medium"
+                                        className="w-full px-6 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold placeholder:font-medium"
                                     />
                                 </div>
                                 <div className="md:col-span-2 space-y-2">
-                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1">Interest Area</label>
-                                    <select className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold appearance-none">
+                                    <label className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] ml-1">Interest Area</label>
+                                    <select className="w-full px-6 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold appearance-none">
                                         <option>Web Development</option>
                                         <option>Data Science</option>
                                         <option>UI/UX Design</option>
@@ -85,11 +85,11 @@ const Contact = () => {
                                     </select>
                                 </div>
                                 <div className="md:col-span-2 space-y-2">
-                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1">Message</label>
+                                    <label className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] ml-1">Message</label>
                                     <textarea
                                         rows="6"
                                         placeholder="Tell us about your goals..."
-                                        className="w-full px-6 py-6 rounded-xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold placeholder:font-medium resize-none"
+                                        className="w-full px-6 py-6 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold placeholder:font-medium resize-none"
                                     ></textarea>
                                 </div>
                                 <div className="md:col-span-2">
@@ -104,11 +104,11 @@ const Contact = () => {
             </section>
 
             {/* Map or Locations Placeholder */}
-            <section className="py-24 bg-white border-t border-slate-50 text-center">
-                <h2 className="text-slate-400 font-bold tracking-[0.3em] uppercase text-[10px] mb-8">Direct Virtual Support Available Globally</h2>
+            <section className="py-32 bg-white border-t border-neutral-50 text-center">
+                <h2 className="text-neutral-400 font-bold tracking-[0.3em] uppercase text-[10px] mb-8">Direct Virtual Support Available Globally</h2>
                 <div className="flex flex-wrap justify-center gap-12 opacity-50">
                     {['London', 'New York', 'Singapore', 'Mumbai', 'Sydney'].map(city => (
-                        <span key={city} className="text-2xl font-black text-slate-900 tracking-tighter italic">{city}</span>
+                        <span key={city} className="text-2xl font-black text-black tracking-tighter italic">{city}</span>
                     ))}
                 </div>
             </section>

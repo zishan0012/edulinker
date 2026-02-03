@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const NAVIGATION = [
-    { label: 'Home', path: '/' },
     { label: 'Courses', path: '/courses' },
     {
         label: 'About Us',

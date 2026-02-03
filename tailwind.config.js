@@ -8,41 +8,33 @@ export default {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#0ea5e9', // Light Sky Blue (Sky 500)
-                    dark: '#0284c7',
-                    light: '#e0f2fe',
-                    accent: '#38bdf8',
+                    DEFAULT: '#D35400', // MocDoc Burnt Orange
+                    dark: '#A04000',
+                    light: '#F5CBA7',
+                    accent: '#E67E22',
                 },
                 secondary: {
-                    DEFAULT: '#38bdf8',
-                    dark: '#0ea5e9',
-                    light: '#f0f9ff',
+                    DEFAULT: '#2980B9', // MocDoc Blue
+                    dark: '#1F618D',
+                    light: '#D6EAF8',
                 },
                 brand: {
-                    50: '#f0f9ff',
-                    100: '#e0f2fe',
-                    200: '#bae6fd',
-                    300: '#7dd3fc',
-                    400: '#38bdf8',
-                    500: '#0ea5e9', // Sky 500
-                    600: '#0284c7',
-                    700: '#0369a1',
-                    800: '#075985',
-                    900: '#0c4a6e',
-                    950: '#082f49',
+                    orange: '#D35400', // Clinic/Primary
+                    blue: '#2980B9',   // Hospital
+                    green: '#27AE60',  // Pharmacy
+                    purple: '#8E44AD', // Lab
+                    50: '#FDF2E9',
+                    100: '#FAE5D3',
+                    200: '#F5CBA7',
+                    500: '#D35400',
+                    600: '#A04000',
+                    900: '#6E2C00',
                 },
-                accent: {
-                    50: '#f0fdf4',
-                    100: '#dcfce7',
-                    200: '#bbf7d0',
-                    300: '#86efac',
-                    400: '#4ade80',
-                    500: '#22c55e',
-                    600: '#16a34a',
-                    700: '#15803d',
-                    800: '#166534',
-                    900: '#14532d',
-                }
+                // Specific card colors for the grid
+                clinic: '#D35400',
+                hospital: '#2980B9',
+                lab: '#8E44AD',
+                pharmacy: '#27AE60',
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],

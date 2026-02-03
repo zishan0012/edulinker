@@ -76,35 +76,35 @@ const Courses = () => {
     return (
         <div className="main-content">
             {/* Header Section */}
-            <section className="bg-white pt-20 pb-32 relative overflow-hidden">
+            <section className="bg-white pt-40 pb-32 relative overflow-hidden">
                 <div className="absolute inset-0 pattern-circuit opacity-[0.03]"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div className="container mx-auto px-8 lg:px-12 relative z-10 text-center">
                     <span className="text-brand-500 font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Knowledge Hub</span>
-                    <h1 className="text-5xl md:text-7xl font-bold text-slate-900 leading-tight mb-8 italic">
+                    <h1 className="text-5xl md:text-7xl font-bold text-black leading-tight mb-8 italic">
                         Explore Our <span className="gradient-text">Courses</span>
                     </h1>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
                         Discover top-rated programs taught by industry leaders. Master new skills at your own pace with our certified curriculum.
                     </p>
                 </div>
             </section>
 
-            <section className="py-24 bg-slate-50 relative">
+            <section className="py-32 bg-neutral-50 relative">
                 <div className="absolute inset-0 pattern-cubes opacity-[0.02]"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="container mx-auto px-8 lg:px-12 relative z-10">
                     {/* Search and Filter */}
                     <div className="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16">
                         <div className="relative w-full lg:w-[500px] group">
-                            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-brand-500 transition-colors" size={20} />
+                            <Search className="absolute left-6 top-1/2 -tranneutral-y-1/2 text-neutral-400 group-focus-within:text-brand-500 transition-colors" size={20} />
                             <input
                                 type="text"
                                 placeholder="What do you want to learn today?"
-                                className="w-full pl-16 pr-6 py-5 rounded-xl bg-white border border-slate-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all shadow-xl shadow-slate-200/50"
+                                className="w-full pl-16 pr-6 py-5 rounded-xl bg-white border border-neutral-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all shadow-xl shadow-neutral-200/50"
                             />
                         </div>
 
                         <div className="flex items-center gap-4 w-full lg:w-auto overflow-x-auto pb-4 lg:pb-0">
-                            <div className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-100 rounded-lg text-slate-500 font-bold text-xs uppercase tracking-widest mr-2">
+                            <div className="flex items-center gap-2 px-4 py-2 bg-white border border-neutral-100 rounded-lg text-neutral-500 font-bold text-xs uppercase tracking-widest mr-2">
                                 <SlidersHorizontal size={16} /> Filters
                             </div>
                             {['All', 'Development', 'Design', 'Business'].map((cat, i) => (
@@ -112,7 +112,7 @@ const Courses = () => {
                                     key={cat}
                                     className={`whitespace-nowrap px-6 py-2.5 rounded-lg font-bold text-sm transition-all ${i === 0
                                         ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/20'
-                                        : 'bg-white text-slate-600 border border-slate-100 hover:border-brand-500 hover:text-brand-500'
+                                        : 'bg-white text-neutral-600 border border-neutral-100 hover:border-brand-500 hover:text-brand-500'
                                         }`}
                                 >
                                     {cat}
@@ -132,7 +132,7 @@ const Courses = () => {
                         <button className="btn-primary px-12 py-5 text-lg">
                             Load More Programs
                         </button>
-                        <p className="mt-6 text-xs text-slate-400 font-bold uppercase tracking-widest">Showing {allCourses.length} of 500+ Courses</p>
+                        <p className="mt-6 text-xs text-neutral-400 font-bold uppercase tracking-widest">Showing {allCourses.length} of 500+ Courses</p>
                     </div>
                 </div>
             </section>

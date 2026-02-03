@@ -5,24 +5,24 @@ const About = () => {
     return (
         <div className="main-content">
             {/* Hero */}
-            <section className="relative bg-white pt-20 pb-32 overflow-hidden">
+            <section className="relative bg-white pt-40 pb-32 overflow-hidden">
                 <div className="absolute inset-0 pattern-circuit opacity-[0.03]"></div>
-                <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-50/30 -skew-x-12 translate-x-20"></div>
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-50/30 -skew-x-12 tranneutral-x-20"></div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div className="container mx-auto px-8 lg:px-12 relative z-10 text-center">
                     <span className="text-brand-500 font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Our Identity</span>
-                    <h1 className="text-5xl md:text-7xl font-bold text-slate-900 leading-tight mb-8 italic">
+                    <h1 className="text-5xl md:text-7xl font-bold text-black leading-tight mb-8 italic">
                         Empowering Minds <span className="gradient-text">Globally</span>
                     </h1>
-                    <p className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                    <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
                         We are on a mission to democratize education by connecting professional experts with ambitious learners around the world through an industrial-grade digital ecosystem.
                     </p>
                 </div>
             </section>
 
             {/* Stats with Medikryoss Pattern */}
-            <section className="bg-slate-900 py-16 relative">
-                <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+            <section className="bg-black py-24 relative">
+                <div className="container mx-auto px-8 lg:px-12 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
                     {[
                         { val: '50k+', label: 'Graduated Students' },
                         { val: '200+', label: 'Industry Experts' },
@@ -42,9 +42,9 @@ const About = () => {
             </section>
 
             {/* Mission Section */}
-            <section className="py-24 bg-white relative overflow-hidden">
-                <div className="absolute top-1/2 left-0 w-64 h-64 bg-brand-50 rounded-full blur-3xl opacity-50 -translate-x-1/2"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-20 items-center">
+            <section className="py-32 bg-white relative overflow-hidden">
+                <div className="absolute top-1/2 left-0 w-64 h-64 bg-brand-50 rounded-full blur-3xl opacity-50 -tranneutral-x-1/2"></div>
+                <div className="container mx-auto px-8 lg:px-12 grid lg:grid-cols-2 gap-20 items-center">
                     <div className="relative">
                         <div className="absolute -inset-4 bg-brand-50 rounded-2xl rotate-2"></div>
                         <img
@@ -54,19 +54,19 @@ const About = () => {
                         />
                         <div className="absolute -bottom-8 -left-8 glass-card p-6 bg-white rounded-xl shadow-2xl">
                             <Zap className="text-brand-500 mb-2" size={32} />
-                            <div className="text-xl font-bold text-slate-900 leading-tight">Fast-Track <br />Your Career</div>
+                            <div className="text-xl font-bold text-black leading-tight">Fast-Track <br />Your Career</div>
                         </div>
                     </div>
 
                     <div className="space-y-8">
                         <div className="space-y-4">
                             <span className="text-brand-500 font-bold uppercase tracking-[0.2em] text-[10px]">What We Do</span>
-                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 italic leading-tight">
+                            <h2 className="text-3xl md:text-5xl font-bold text-black italic leading-tight">
                                 Our Journey Towards <span className="gradient-text">Excellence</span>
                             </h2>
                         </div>
 
-                        <p className="text-lg text-slate-600 leading-relaxed">
+                        <p className="text-lg text-neutral-600 leading-relaxed">
                             Founded with the vision of bridging the skill gap, EduLinker has evolved into a comprehensive digital learning destination. We focus on outcome-based education that prepares you for real-world challenges.
                         </p>
 
@@ -77,9 +77,9 @@ const About = () => {
                                 'Peer Support',
                                 'Global Certification'
                             ].map((item, i) => (
-                                <div key={i} className="flex items-center gap-3 p-4 rounded-xl border border-slate-100 bg-slate-50 group hover:border-brand-500 transition-all">
+                                <div key={i} className="flex items-center gap-3 p-4 rounded-xl border border-neutral-100 bg-neutral-50 group hover:border-brand-500 transition-all">
                                     <CheckCircle2 className="text-brand-500 shrink-0" size={20} />
-                                    <span className="font-bold text-slate-700 text-sm italic">{item}</span>
+                                    <span className="font-bold text-neutral-700 text-sm italic">{item}</span>
                                 </div>
                             ))}
                         </div>
@@ -88,12 +88,12 @@ const About = () => {
             </section>
 
             {/* Core Values with industrial cards */}
-            <section className="py-24 bg-slate-50 relative">
+            <section className="py-32 bg-neutral-50 relative">
                 <div className="absolute inset-0 pattern-cubes opacity-[0.02]"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="container mx-auto px-8 lg:px-12 relative z-10">
                     <div className="text-center mb-16 space-y-4">
                         <span className="text-brand-500 font-bold uppercase tracking-[0.2em] text-[10px]">Our Foundation</span>
-                        <h2 className="text-4xl font-bold text-slate-900 italic">Values That Drive <span className="gradient-text">Success</span></h2>
+                        <h2 className="text-4xl font-bold text-black italic">Values That Drive <span className="gradient-text">Success</span></h2>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
@@ -104,8 +104,8 @@ const About = () => {
                         ].map((value, i) => (
                             <div key={i} className="glass-card p-10 bg-white border-l-4 border-transparent hover:border-brand-500 transition-all group">
                                 <Target className="text-brand-500 mb-6 group-hover:scale-110 transition-transform" size={40} />
-                                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-tight">{value.title}</h3>
-                                <p className="text-slate-500 text-sm leading-relaxed">{value.desc}</p>
+                                <h3 className="text-xl font-bold text-black mb-4 uppercase tracking-tight">{value.title}</h3>
+                                <p className="text-neutral-500 text-sm leading-relaxed">{value.desc}</p>
                             </div>
                         ))}
                     </div>

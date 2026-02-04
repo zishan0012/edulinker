@@ -37,28 +37,97 @@ const Navbar = () => {
                 </Link>
 
                 <div className="hidden lg:flex items-center gap-8">
-                    {NAVIGATION.map((item) => (
+                    {NAVIGATION.map((item, index) => (
                         <div key={item.label} className="relative group h-20 flex items-center">
-                            {item.children ? (
+                            {item.megaMenu ? (
                                 <>
-                                    <button className={`text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-brand-500 hover:bg-brand-50/50 ${item.children.some(child => location.pathname === child.path) ? 'nav-active' : 'text-neutral-600'
+                                    <button className={`text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-brand-500 hover:bg-brand-50/50 ${item.columns?.some(col => col.items.some(subItem => !subItem.external && location.pathname === subItem.path)) ? 'nav-active' : 'text-neutral-600'
                                         }`}>
                                         {item.label}
                                         <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
                                     </button>
-                                    <div className="absolute top-[calc(100%-12px)] left-0 w-64 bg-white rounded-xl shadow-2xl border border-neutral-100 opacity-0 invisible tranneutral-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:tranneutral-y-0 z-50 overflow-hidden">
+                                    <div className={`absolute top-[calc(100%-12px)] ${index < 2 ? 'left-0' : 'left-1/2 -translate-x-1/2'} bg-white rounded-xl shadow-2xl border border-neutral-100 opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-50 overflow-hidden min-w-max`}>
+                                        <div className="py-6 px-4">
+                                            <div className="grid gap-8" style={{ gridTemplateColumns: `repeat(${item.columns.length}, minmax(200px, 1fr))` }}>
+                                                {item.columns.map((column, colIndex) => (
+                                                    <div key={colIndex} className={`${colIndex !== item.columns.length - 1 ? 'border-r border-neutral-100 pr-8' : ''}`}>
+                                                        <h3 className="text-sm font-bold text-neutral-700 uppercase tracking-wide mb-4 pb-2 border-b border-neutral-200">
+                                                            {column.title}
+                                                        </h3>
+                                                        <div className="space-y-1">
+                                                            {column.items.map((subItem, itemIndex) => (
+                                                                subItem.external ? (
+                                                                    <a
+                                                                        key={itemIndex}
+                                                                        href={subItem.path}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="flex items-center gap-2 px-3 py-2 text-sm font-medium transition-all rounded-lg text-neutral-600 hover:text-brand-500 hover:bg-brand-50/50"
+                                                                    >
+                                                                        {subItem.label}
+                                                                        <svg className="w-3 h-3 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                                        </svg>
+                                                                    </a>
+                                                                ) : (
+                                                                    <Link
+                                                                        key={itemIndex}
+                                                                        to={subItem.path}
+                                                                        className={`block px-3 py-2 text-sm font-medium transition-all rounded-lg ${location.pathname === subItem.path
+                                                                            ? 'bg-brand-50/50 text-brand-500'
+                                                                            : 'text-neutral-600 hover:text-brand-500 hover:bg-brand-50/50'
+                                                                            }`}
+                                                                    >
+                                                                        {subItem.label}
+                                                                    </Link>
+                                                                )
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </>
+                            ) : item.children ? (
+                                <>
+                                    <button className={`text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-brand-500 hover:bg-brand-50/50 ${item.children.some(child => !child.isHeader && location.pathname === child.path) ? 'nav-active' : 'text-neutral-600'
+                                        }`}>
+                                        {item.label}
+                                        <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                                    </button>
+                                    <div className={`absolute top-[calc(100%-12px)] left-0 ${item.label === 'Company' ? 'w-80' : 'w-64'} bg-white rounded-xl shadow-2xl border border-neutral-100 opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-50 overflow-hidden`}>
                                         <div className="py-2">
-                                            {item.children.map((child) => (
-                                                <Link
-                                                    key={child.label}
-                                                    to={child.path}
-                                                    className={`flex items-center gap-3 px-5 py-3 text-sm font-medium transition-all border-l-4 ${location.pathname === child.path
-                                                        ? 'bg-brand-50/50 text-brand-500 border-brand-500'
-                                                        : 'text-neutral-600 border-transparent hover:text-brand-500 hover:bg-brand-50/50 hover:border-brand-500'
-                                                        }`}
-                                                >
-                                                    {child.label}
-                                                </Link>
+                                            {item.children.map((child, index) => (
+                                                child.isHeader ? (
+                                                    <div key={index} className={`px-5 ${index === 0 ? 'pt-2' : 'pt-4'} pb-2 text-xs font-bold text-neutral-400 uppercase tracking-wider border-t ${index === 0 ? 'border-transparent' : 'border-neutral-100'}`}>
+                                                        {child.label}
+                                                    </div>
+                                                ) : child.external ? (
+                                                    <a
+                                                        key={index}
+                                                        href={child.path}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-3 px-5 py-3 text-sm font-medium transition-all border-l-4 text-neutral-600 border-transparent hover:text-brand-500 hover:bg-brand-50/50 hover:border-brand-500"
+                                                    >
+                                                        {child.label}
+                                                        <svg className="w-3 h-3 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                        </svg>
+                                                    </a>
+                                                ) : (
+                                                    <Link
+                                                        key={index}
+                                                        to={child.path}
+                                                        className={`flex items-center gap-3 px-5 py-3 text-sm font-medium transition-all border-l-4 ${location.pathname === child.path
+                                                            ? 'bg-brand-50/50 text-brand-500 border-brand-500'
+                                                            : 'text-neutral-600 border-transparent hover:text-brand-500 hover:bg-brand-50/50 hover:border-brand-500'
+                                                            }`}
+                                                    >
+                                                        {child.label}
+                                                    </Link>
+                                                )
                                             ))}
                                         </div>
                                     </div>
@@ -94,23 +163,73 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            <div className={`lg:hidden fixed inset-0 top-20 bg-white z-[900] transition-all duration-300 transform ${isOpen ? 'tranneutral-x-0' : 'tranneutral-x-full'}`}>
+            <div className={`lg:hidden fixed inset-0 top-20 bg-white z-[900] transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="p-4 space-y-2 overflow-y-auto h-full">
                     {NAVIGATION.map((item) => (
                         <div key={item.label}>
-                            {item.children ? (
+                            {item.megaMenu ? (
                                 <div className="space-y-1">
-                                    <div className="px-4 py-2 text-sm font-bold text-neutral-400 uppercase tracking-wider">{item.label}</div>
-                                    {item.children.map((child) => (
-                                        <Link
-                                            key={child.label}
-                                            to={child.path}
-                                            onClick={() => setIsOpen(false)}
-                                            className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors ${location.pathname === child.path ? 'bg-brand-50 text-brand-500' : 'text-neutral-700 hover:bg-brand-50 hover:text-brand-500'
-                                                }`}
-                                        >
-                                            {child.label}
-                                        </Link>
+                                    <div className="px-4 py-2 text-sm font-bold text-neutral-800 uppercase tracking-wider">{item.label}</div>
+                                    {item.columns.map((column, colIndex) => (
+                                        <div key={colIndex} className="ml-2">
+                                            <div className="px-4 pt-3 pb-1 text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                                                {column.title}
+                                            </div>
+                                            {column.items.map((subItem, itemIndex) => (
+                                                subItem.external ? (
+                                                    <a
+                                                        key={itemIndex}
+                                                        href={subItem.path}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="block px-4 py-3 rounded-lg text-base font-semibold transition-colors text-neutral-700 hover:bg-brand-50 hover:text-brand-500"
+                                                    >
+                                                        {subItem.label}
+                                                    </a>
+                                                ) : (
+                                                    <Link
+                                                        key={itemIndex}
+                                                        to={subItem.path}
+                                                        onClick={() => setIsOpen(false)}
+                                                        className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors ${location.pathname === subItem.path ? 'bg-brand-50 text-brand-500' : 'text-neutral-700 hover:bg-brand-50 hover:text-brand-500'
+                                                            }`}
+                                                    >
+                                                        {subItem.label}
+                                                    </Link>
+                                                )
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : item.children ? (
+                                <div className="space-y-1">
+                                    <div className="px-4 py-2 text-sm font-bold text-neutral-800 uppercase tracking-wider">{item.label}</div>
+                                    {item.children.map((child, index) => (
+                                        child.isHeader ? (
+                                            <div key={index} className="px-4 pt-3 pb-1 text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                                                {child.label}
+                                            </div>
+                                        ) : child.external ? (
+                                            <a
+                                                key={index}
+                                                href={child.path}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="block px-4 py-3 rounded-lg text-base font-semibold transition-colors text-neutral-700 hover:bg-brand-50 hover:text-brand-500"
+                                            >
+                                                {child.label}
+                                            </a>
+                                        ) : (
+                                            <Link
+                                                key={index}
+                                                to={child.path}
+                                                onClick={() => setIsOpen(false)}
+                                                className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors ${location.pathname === child.path ? 'bg-brand-50 text-brand-500' : 'text-neutral-700 hover:bg-brand-50 hover:text-brand-500'
+                                                    }`}
+                                            >
+                                                {child.label}
+                                            </Link>
+                                        )
                                     ))}
                                 </div>
                             ) : (

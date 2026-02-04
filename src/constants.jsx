@@ -39,7 +39,7 @@ export const NAVIGATION = [
                 title: 'EduLinker Brands',
                 items: [
                     { label: 'EduLinker', path: '/' },
-                    { label: 'CLink HR Services', path: 'http://clinkservices.in/', external: true }
+                    { label: 'CLink HR Services', path: 'https://clinkhr.com/', external: true }
                 ]
             }
         ]

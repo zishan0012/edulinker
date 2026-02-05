@@ -7,7 +7,7 @@ const About = () => {
             {/* Hero */}
             <section className="relative bg-white pt-40 pb-32 overflow-hidden">
                 <div className="absolute inset-0 pattern-circuit opacity-[0.03]"></div>
-                <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-50/30 -skew-x-12 tranneutral-x-20"></div>
+                <div className="absolute top-0 right-0 h-full bg-brand-50/30 -skew-x-12 tranneutral-x-20"></div>
 
                 <div className="container mx-auto px-8 lg:px-12 relative z-10 text-center">
                     <span className="text-brand-500 font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Our Identity</span>

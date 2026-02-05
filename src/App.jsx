@@ -21,7 +21,14 @@ import TermsConditions from './pages/Company/TermsConditions';
 import Careers from './pages/Company/Careers';
 import LifeAtEdulinker from './pages/Company/LifeAtEdulinker';
 import EmployeeSpeak from './pages/Company/EmployeeSpeak';
-import Partners from './pages/Company/Partners';
+
+import VisionMission from './pages/Company/VisionMission';
+import FounderMessage from './pages/Company/FounderMessage';
+import OurApproach from './pages/Company/OurApproach';
+import PanIndiaPresence from './pages/Company/PanIndiaPresence';
+import RefundPolicy from './pages/Company/RefundPolicy';
+import BecomeBPP from './pages/Company/BecomeBPP';
+import BecomeIPP from './pages/Company/BecomeIPP';
 
 // Services
 import Services from './pages/Services/Services';
@@ -30,7 +37,23 @@ import Payroll from './pages/Services/Payroll';
 import Training from './pages/Services/Training';
 import Consulting from './pages/Services/Consulting';
 import Compliance from './pages/Services/Compliance';
+
+
+// Service Sub-pages
+import ITRecruitment from './pages/Services/ITRecruitment';
+import NonITRecruitment from './pages/Services/NonITRecruitment';
+import BulkHiring from './pages/Services/BulkHiring';
+import ExecutiveSearch from './pages/Services/ExecutiveSearch';
 import ContractStaffing from './pages/Services/ContractStaffing';
+import PayrollManagement from './pages/Services/PayrollManagement';
+import ThirdPartyPayroll from './pages/Services/ThirdPartyPayroll';
+import ComplianceManagement from './pages/Services/ComplianceManagement';
+import HRAudit from './pages/Services/HRAudit';
+
+import CorporateTraining from './pages/Services/CorporateTraining';
+import SkillDevelopment from './pages/Services/SkillDevelopment';
+import LeadershipPrograms from './pages/Services/LeadershipPrograms';
+import TechnicalTraining from './pages/Services/TechnicalTraining';
 
 // Solutions
 import Solutions from './pages/Solutions/Solutions';
@@ -84,6 +107,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
 
             {/* Company */}
+
             <Route path="/process" element={<Process />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/awards" element={<Awards />} />
@@ -92,7 +116,15 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/life-at-edulinker" element={<LifeAtEdulinker />} />
             <Route path="/employee-speak" element={<EmployeeSpeak />} />
-            <Route path="/partners" element={<Partners />} />
+
+            <Route path="/become-bpp" element={<BecomeBPP />} />
+            <Route path="/become-ipp" element={<BecomeIPP />} />
+
+            <Route path="/vision-mission" element={<VisionMission />} />
+            <Route path="/founder-message" element={<FounderMessage />} />
+            <Route path="/our-approach" element={<OurApproach />} />
+            <Route path="/pan-india-presence" element={<PanIndiaPresence />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
 
             {/* Services */}
             <Route path="/services" element={<Services />} />
@@ -101,7 +133,23 @@ function App() {
             <Route path="/services/training" element={<Training />} />
             <Route path="/services/consulting" element={<Consulting />} />
             <Route path="/services/compliance" element={<Compliance />} />
-            <Route path="/services/contract-staffing" element={<ContractStaffing />} />
+
+
+            {/* Service Sub-pages */}
+            <Route path="/services/recruitment/it-recruitment" element={<ITRecruitment />} />
+            <Route path="/services/recruitment/non-it-recruitment" element={<NonITRecruitment />} />
+            <Route path="/services/recruitment/bulk-hiring" element={<BulkHiring />} />
+            <Route path="/services/recruitment/executive-search" element={<ExecutiveSearch />} />
+            <Route path="/services/recruitment/contract-staffing" element={<ContractStaffing />} />
+            <Route path="/services/payroll/management" element={<PayrollManagement />} />
+            <Route path="/services/payroll/third-party" element={<ThirdPartyPayroll />} />
+            <Route path="/services/payroll/compliance" element={<ComplianceManagement />} />
+            <Route path="/services/payroll/audit" element={<HRAudit />} />
+
+            <Route path="/services/training/corporate" element={<CorporateTraining />} />
+            <Route path="/services/training/skill-development" element={<SkillDevelopment />} />
+            <Route path="/services/training/leadership" element={<LeadershipPrograms />} />
+            <Route path="/services/training/technical" element={<TechnicalTraining />} />
 
             {/* Solutions */}
             <Route path="/solutions" element={<Solutions />} />

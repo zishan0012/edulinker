@@ -9,10 +9,10 @@ export const NAVIGATION = [
                 title: 'About Us',
                 items: [
                     { label: 'Company Overview', path: '/about' },
-                    { label: 'Vision & Mission', path: '/about#vision' },
-                    { label: 'Founder\'s Message', path: '/about#founder' },
-                    { label: 'Our Approach', path: '/about#approach' },
-                    { label: 'Pan-India Presence', path: '/about#presence' }
+                    { label: 'Vision & Mission', path: '/vision-mission' },
+                    { label: 'Founder\'s Message', path: '/founder-message' },
+                    { label: 'Our Approach', path: '/our-approach' },
+                    { label: 'Pan-India Presence', path: '/pan-india-presence' }
                 ]
             },
             {
@@ -31,8 +31,8 @@ export const NAVIGATION = [
                     { label: 'Careers', path: '/careers' },
                     { label: 'Life at EduLinker', path: '/life-at-edulinker' },
                     { label: 'Employee Speak', path: '/employee-speak' },
-                    { label: 'Become Our BPP', path: '/partners#bpp' },
-                    { label: 'Become Our IPP', path: '/partners#ipp' }
+                    { label: 'Become Our BPP', path: '/become-bpp' },
+                    { label: 'Become Our IPP', path: '/become-ipp' }
                 ]
             },
             {
@@ -62,29 +62,29 @@ export const NAVIGATION = [
             {
                 title: 'Recruitment Solutions',
                 items: [
-                    { label: 'IT Recruitment', path: '/services/recruitment#it' },
-                    { label: 'Non-IT Recruitment', path: '/services/recruitment#non-it' },
-                    { label: 'Bulk Hiring', path: '/services/recruitment#bulk' },
-                    { label: 'Executive Search', path: '/services/recruitment#executive' },
-                    { label: 'Contract Staffing', path: '/services/contract-staffing' }
+                    { label: 'IT Recruitment', path: '/services/recruitment/it-recruitment' },
+                    { label: 'Non-IT Recruitment', path: '/services/recruitment/non-it-recruitment' },
+                    { label: 'Bulk Hiring', path: '/services/recruitment/bulk-hiring' },
+                    { label: 'Executive Search', path: '/services/recruitment/executive-search' },
+                    { label: 'Contract Staffing', path: '/services/recruitment/contract-staffing' }
                 ]
             },
             {
                 title: 'HR & Payroll',
                 items: [
-                    { label: 'Payroll Management', path: '/services/payroll#management' },
-                    { label: 'Third-Party Payroll', path: '/services/payroll#3p' },
-                    { label: 'Compliance Management', path: '/services/payroll#compliance' },
-                    { label: 'HR Audit', path: '/services/payroll#audit' }
+                    { label: 'Payroll Management', path: '/services/payroll/management' },
+                    { label: 'Third-Party Payroll', path: '/services/payroll/third-party' },
+                    { label: 'Compliance Management', path: '/services/payroll/compliance' },
+                    { label: 'HR Audit', path: '/services/payroll/audit' }
                 ]
             },
             {
                 title: 'Training & Development',
                 items: [
-                    { label: 'Corporate Training', path: '/services/training#corporate' },
-                    { label: 'Skill Development', path: '/services/training#skill' },
-                    { label: 'Leadership Programs', path: '/services/training#leadership' },
-                    { label: 'Technical Training', path: '/services/training#technical' }
+                    { label: 'Corporate Training', path: '/services/training/corporate' },
+                    { label: 'Skill Development', path: '/services/training/skill-development' },
+                    { label: 'Leadership Programs', path: '/services/training/leadership' },
+                    { label: 'Technical Training', path: '/services/training/technical' }
                 ]
             }
         ]
@@ -195,10 +195,8 @@ export const FOOTER_LINKS = {
         { label: 'HR Advisory', path: '/services/consulting' }
     ],
     partners: [
-        { label: 'Partner Program', path: '/partners' },
-        { label: 'IPP Model', path: '/partners#ipp' },
-        { label: 'BPP Model', path: '/partners#bpp' },
-        { label: 'Partner Onboarding', path: '/partners' }
+        { label: 'IPP Model', path: '/become-ipp' },
+        { label: 'BPP Model', path: '/become-bpp' }
     ],
     resources: [
         { label: 'Blog', path: '/blog' },

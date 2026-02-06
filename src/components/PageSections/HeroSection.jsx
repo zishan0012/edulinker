@@ -16,7 +16,7 @@ const HeroSection = ({ title, subtitle, image, align = 'center' }) => {
             <div className="container mx-auto px-8 lg:px-12 relative z-10">
                 <Reveal>
                     <div className={`max-w-4xl ${align === 'center' ? 'mx-auto text-center' : ''}`}>
-                        <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${image ? 'text-white' : 'text-slate-900'}`}>
+                        <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${image ? 'text-white' : 'text-slate-900'}`}>
                             {title}
                         </h1>
                         <p className={`text-xl leading-relaxed ${image ? 'text-neutral-200' : 'text-neutral-600'}`}>

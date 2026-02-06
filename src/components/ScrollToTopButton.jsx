@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 
 const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -28,7 +28,7 @@ const ScrollToTopButton = () => {
     return (
         <AnimatePresence>
             {isVisible && (
-                <motion.button
+                <Motion.button
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
@@ -38,7 +38,7 @@ const ScrollToTopButton = () => {
                     whileTap={{ scale: 0.9 }}
                 >
                     <ArrowUp size={24} />
-                </motion.button>
+                </Motion.button>
             )}
         </AnimatePresence>
     );

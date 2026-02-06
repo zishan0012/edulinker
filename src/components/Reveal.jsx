@@ -1,9 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const Reveal = ({ children, className = "", delay = 0 }) => {
     return (
-        <motion.div
+        <Motion.div
             variants={{
                 hidden: { opacity: 0, y: 50 },
                 visible: { opacity: 1, y: 0 },
@@ -15,7 +15,7 @@ const Reveal = ({ children, className = "", delay = 0 }) => {
             className={className}
         >
             {children}
-        </motion.div>
+        </Motion.div>
     );
 };
 

@@ -1,117 +1,196 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import HeroSection from '../components/PageSections/HeroSection';
+import Reveal from '../components/Reveal';
+import CTASection from '../components/PageSections/CTASection';
+import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe } from 'lucide-react';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        institution: '',
+        subject: '',
+        message: ''
+    });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', formData);
+        alert('Thank you for your message! Our AI EdTech consultants will reach out to you shortly.');
+    };
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
     return (
         <div className="main-content">
-            {/* Hero */}
-            <section className="relative bg-white pt-40 pb-32 overflow-hidden">
-                <div className="absolute inset-0 pattern-circuit opacity-[0.03]"></div>
-                <div className="container mx-auto px-8 lg:px-12 relative z-10 text-center">
-                    <span className="text-brand-500 font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Get Support</span>
-                    <h1 className="text-5xl md:text-7xl font-bold text-black leading-tight mb-8 italic">
-                        Get in <span className="gradient-text">Touch</span>
-                    </h1>
-                    <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
-                        Have questions about our curriculum or admission process? Our academic advisors are here to help you start your learning journey.
-                    </p>
-                </div>
-            </section>
+            <HeroSection
+                title="Connect with Our Experts"
+                subtitle="Ready to revolutionize your institution with AI intelligence? Get in touch for a bespoke consultation."
+                image="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1200&q=80"
+            />
 
-            <section className="py-32 bg-neutral-50 relative">
-                <div className="absolute inset-0 pattern-cubes opacity-[0.02]"></div>
-                <div className="container mx-auto px-8 lg:px-12 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <section className="py-24 bg-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-50/50 skew-x-12 translate-x-1/2 -z-10"></div>
 
-                        {/* Contact Details */}
-                        <div className="space-y-6">
-                            {[
-                                { icon: <Mail size={24} />, title: 'Email Enquiries', detail1: 'admissions@edulinker.com', detail2: 'support@edulinker.com', color: 'bg-brand-50 text-brand-500' },
-                                { icon: <Phone size={24} />, title: 'Call Center', detail1: '+1 (234) 567-890', detail2: 'Mon - Fri, 9am - 6pm', color: 'bg-brand-50 text-brand-500' },
-                                { icon: <MapPin size={24} />, title: 'Campus Address', detail1: '456 Learning Blvd, Suite 100', detail2: 'Silicon Valley, CA 94025', color: 'bg-brand-50 text-brand-500' }
-                            ].map((item, i) => (
-                                <div key={i} className="glass-card p-8 bg-white flex items-start gap-5 border-l-4 border-transparent hover:border-brand-500 transition-all group">
-                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform ${item.color}`}>
-                                        {item.icon}
+                <div className="container mx-auto px-8 lg:px-12">
+                    <div className="grid lg:grid-cols-2 gap-20">
+                        {/* Info Column */}
+                        <Reveal>
+                            <div className="space-y-12">
+                                <div>
+                                    <h2 className="text-3xl font-bold text-slate-900 mb-6 italic">Global <span className="text-brand-600">Headquarters</span></h2>
+                                    <p className="text-lg text-neutral-600 mb-8 max-w-md">Our global presence ensures your institution receives round-the-clock support and local expertise wherever you are.</p>
+
+                                    <div className="space-y-6">
+                                        <div className="flex items-start gap-5">
+                                            <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 shrink-0">
+                                                <MapPin size={24} />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-slate-900">Corporate Office</h4>
+                                                <p className="text-neutral-500 text-sm">Tech Hub Plaza, Sector 62, Noida, NCR, India</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-5">
+                                            <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 shrink-0">
+                                                <Mail size={24} />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-slate-900">Email Enquiries</h4>
+                                                <p className="text-neutral-500 text-sm">consult@edulinkers.com</p>
+                                                <p className="text-neutral-500 text-sm">support@edulinkers.com</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-5">
+                                            <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 shrink-0">
+                                                <Phone size={24} />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-slate-900">Direct Line</h4>
+                                                <p className="text-neutral-500 text-sm">+91 (120) 456-7890</p>
+                                                <p className="text-neutral-500 text-sm">+91 (120) 456-7891</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="text-xs font-black text-neutral-400 uppercase tracking-widest mb-1">{item.title}</h4>
-                                        <p className="text-base font-bold text-black">{item.detail1}</p>
-                                        <p className="text-sm text-neutral-500">{item.detail2}</p>
+                                </div>
+
+                                <div className="p-8 rounded-3xl bg-slate-900 text-white relative group overflow-hidden">
+                                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
+                                        <Globe size={120} />
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                                        <Clock className="text-brand-400" size={20} />
+                                        Consultation Hours
+                                    </h3>
+                                    <p className="text-slate-400 text-sm mb-6 leading-relaxed">Our AI implementation specialists are available for discovery calls during the following hours:</p>
+                                    <div className="space-y-2">
+                                        <div className="flex justify-between text-sm">
+                                            <span>Mon - Fri</span>
+                                            <span className="text-brand-400 font-bold">10:00 AM - 07:00 PM IST</span>
+                                        </div>
+                                        <div className="flex justify-between text-sm">
+                                            <span>Sat</span>
+                                            <span className="text-brand-400 font-bold">11:00 AM - 03:00 PM IST</span>
+                                        </div>
                                     </div>
                                 </div>
-                            ))}
-
-                            <div className="p-8 bg-brand-500 rounded-2xl text-white shadow-xl shadow-brand-500/20">
-                                <Clock className="mb-4 opacity-50" size={32} />
-                                <h4 className="text-lg font-bold mb-2">Office Hours</h4>
-                                <p className="text-brand-100 text-sm opacity-80 leading-relaxed">
-                                    Our team is available for virtual consultations and on-campus tours during standard business hours.
-                                </p>
                             </div>
-                        </div>
+                        </Reveal>
 
-                        {/* Contact Form */}
-                        <div className="lg:col-span-2 glass-card bg-white p-10 md:p-16">
-                            <div className="mb-10 flex items-center gap-4">
-                                <div className="w-12 h-px bg-brand-500"></div>
-                                <h3 className="text-xl font-bold text-black uppercase tracking-tight">Send a Message</h3>
-                            </div>
+                        {/* Form Column */}
+                        <Reveal delay={0.2}>
+                            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-neutral-100">
+                                <h3 className="text-2xl font-bold text-slate-900 mb-8">Schedule a <span className="text-brand-600 underline underline-offset-8 decoration-2 decoration-brand-200">Discovery Call</span></h3>
 
-                            <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div className="space-y-2">
-                                    <label className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] ml-1">Full Name</label>
-                                    <input
-                                        type="text"
-                                        placeholder="John Doe"
-                                        className="w-full px-6 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold placeholder:font-medium"
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] ml-1">Email Address</label>
-                                    <input
-                                        type="email"
-                                        placeholder="john@example.com"
-                                        className="w-full px-6 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold placeholder:font-medium"
-                                    />
-                                </div>
-                                <div className="md:col-span-2 space-y-2">
-                                    <label className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] ml-1">Interest Area</label>
-                                    <select className="w-full px-6 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold appearance-none">
-                                        <option>Web Development</option>
-                                        <option>Data Science</option>
-                                        <option>UI/UX Design</option>
-                                        <option>General Enquiry</option>
-                                    </select>
-                                </div>
-                                <div className="md:col-span-2 space-y-2">
-                                    <label className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] ml-1">Message</label>
-                                    <textarea
-                                        rows="6"
-                                        placeholder="Tell us about your goals..."
-                                        className="w-full px-6 py-6 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 transition-all font-bold placeholder:font-medium resize-none"
-                                    ></textarea>
-                                </div>
-                                <div className="md:col-span-2">
-                                    <button type="submit" className="btn-primary w-full py-5 text-lg flex items-center justify-center gap-3">
-                                        Send Enquiry <Send size={20} />
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="space-y-2">
+                                            <label className="text-xs font-bold uppercase tracking-widest text-neutral-400 ml-1">Full Name</label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                required
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                className="w-full px-5 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:border-brand-500 focus:bg-white transition-all outline-none"
+                                                placeholder="John Doe"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-xs font-bold uppercase tracking-widest text-neutral-400 ml-1">Email Address</label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                required
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                className="w-full px-5 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:border-brand-500 focus:bg-white transition-all outline-none"
+                                                placeholder="john@institution.com"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label className="text-xs font-bold uppercase tracking-widest text-neutral-400 ml-1">Institution / Company Name</label>
+                                        <input
+                                            type="text"
+                                            name="institution"
+                                            value={formData.institution}
+                                            onChange={handleChange}
+                                            className="w-full px-5 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:border-brand-500 focus:bg-white transition-all outline-none"
+                                            placeholder="Stanford University / Global Academy"
+                                        />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label className="text-xs font-bold uppercase tracking-widest text-neutral-400 ml-1">Topic of Interest</label>
+                                        <select
+                                            name="subject"
+                                            value={formData.subject}
+                                            onChange={handleChange}
+                                            className="w-full px-5 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:border-brand-500 focus:bg-white transition-all outline-none appearance-none"
+                                        >
+                                            <option value="">Select a topic</option>
+                                            <option value="SaaS Platform">SaaS Platform Implementation</option>
+                                            <option value="AI Integration">Custom AI Integration</option>
+                                            <option value="Product Demo">Product Demo Request</option>
+                                            <option value="Partnership">Partnership Inquiry</option>
+                                            <option value="Other">Other Query</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label className="text-xs font-bold uppercase tracking-widest text-neutral-400 ml-1">Your Message</label>
+                                        <textarea
+                                            name="message"
+                                            required
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            rows="5"
+                                            className="w-full px-5 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:border-brand-500 focus:bg-white transition-all outline-none resize-none"
+                                            placeholder="Tell us about your institutional requirements..."
+                                        ></textarea>
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        className="w-full py-5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold text-lg flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1 active:scale-95 shadow-xl shadow-brand-200"
+                                    >
+                                        <Send size={20} />
+                                        Send Message
                                     </button>
-                                </div>
-                            </form>
-                        </div>
+                                </form>
+                            </div>
+                        </Reveal>
                     </div>
                 </div>
             </section>
 
-            {/* Map or Locations Placeholder */}
-            <section className="py-32 bg-white border-t border-neutral-50 text-center">
-                <h2 className="text-neutral-400 font-bold tracking-[0.3em] uppercase text-[10px] mb-8">Direct Virtual Support Available Globally</h2>
-                <div className="flex flex-wrap justify-center gap-12 opacity-50">
-                    {['London', 'New York', 'Singapore', 'Mumbai', 'Sydney'].map(city => (
-                        <span key={city} className="text-2xl font-black text-black tracking-tighter italic">{city}</span>
-                    ))}
-                </div>
-            </section>
+            <CTASection title="Prefer to Chat?" subtitle="Message us directly on our institutional partner channel for instant support." />
         </div>
     );
 };

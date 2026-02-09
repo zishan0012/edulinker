@@ -27,7 +27,7 @@ const Home = () => {
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="flex-1 text-left">
                             <Reveal>
-                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 text-brand-600 text-sm font-bold mb-6">
+                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 text-brand-600 text-sm font-semibold mb-6">
                                     <Cpu size={16} />
                                     <span>Where education meets smart technology</span>
                                 </div>

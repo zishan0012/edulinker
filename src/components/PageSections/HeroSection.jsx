@@ -3,7 +3,8 @@ import Reveal from '../Reveal';
 
 const HeroSection = ({ title, subtitle, image, align = 'center' }) => {
     return (
-        <section className={`relative pt-40 pb-20 overflow-hidden ${image ? 'bg-black' : 'bg-gradient-to-br from-neutral-50 to-white'}`}>
+        <section className={`relative min-h-[70vh] md:min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden ${image ? 'bg-black' : 'bg-gradient-to-br from-neutral-50 to-white'}`}>
+
             {image && (
                 <>
                     <div className="absolute inset-0 z-0">

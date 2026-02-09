@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const CTASection = ({ title, text, actionText = "Get Started", actionLink = "/contact" }) => {
     return (
-        <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <section className="py-24 bg-slate-800 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-600 rounded-full blur-[100px] opacity-20 translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-600 rounded-full blur-[80px] opacity-20 -translate-x-1/2 translate-y-1/2"></div>
 

@@ -148,7 +148,7 @@ const Blog = () => {
 
         {/* Search Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-10">
-          <div className="flex overflow-x-auto gap-2 pb-2 md:pb-0 w-full md:w-auto">
+          <div className="flex overflow-x-auto gap-2 pb-2 md:pb-0 w-full md:w-auto hide-scrollbar">
             {tags.map(tag => (
               <button key={tag} className="px-4 py-2 rounded-full text-sm font-medium bg-white border border-slate-200 text-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors whitespace-nowrap">
                 {tag}
@@ -168,7 +168,7 @@ const Blog = () => {
         </div>
 
         {/* Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredPosts.map((post, index) => (
             <motion.article
               key={post.id}

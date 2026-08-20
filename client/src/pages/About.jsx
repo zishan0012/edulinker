@@ -52,11 +52,11 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
               We are on a mission to<br />
               <span className="text-cyan-300">democratize education</span>
             </h1>
-            <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Edulinker was founded with a simple belief: that anyone, anywhere should have access to world-class education and the opportunity to transform their life through learning.
             </p>
           </motion.div>
@@ -64,9 +64,9 @@ const About = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-white border-b border-slate-100">
+      <section className="py-12 sm:py-16 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}

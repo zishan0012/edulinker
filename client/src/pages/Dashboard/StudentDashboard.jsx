@@ -206,20 +206,20 @@ const StudentDashboard = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar */}
           <aside className="lg:w-56 shrink-0">
-            <nav className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+            <nav className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-x-auto flex lg:flex-col hide-scrollbar">
               {tabs.map(tab => {
                 const Icon = tab.icon;
                 return (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`w-full flex items-center gap-3 px-5 py-4 text-sm font-medium transition-colors text-left border-b border-slate-50 last:border-b-0 ${
+                    className={`w-full whitespace-nowrap flex shrink-0 lg:shrink items-center justify-center lg:justify-start gap-3 px-5 py-3.5 sm:py-4 text-sm font-medium transition-colors text-left border-b-2 lg:border-b lg:border-b-slate-50 ${
                       activeTab === tab.id
-                        ? 'bg-blue-50 text-blue-600'
-                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                        ? 'bg-blue-50 text-blue-600 border-blue-600 lg:border-blue-600 font-semibold'
+                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-transparent'
                     }`}
                   >
-                    <Icon className="w-4 h-4" /> {tab.label}
+                    <Icon className="w-4 h-4 shrink-0" /> {tab.label}
                   </button>
                 );
               })}

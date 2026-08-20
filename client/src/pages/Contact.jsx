@@ -49,7 +49,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Get in touch</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">Get in touch</h1>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Have questions or feedback? We would love to hear from you. Send us a message and we will respond as soon as possible.
             </p>
@@ -57,7 +57,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {contactDetails.map((item, index) => {
             const Icon = item.icon;
             return (

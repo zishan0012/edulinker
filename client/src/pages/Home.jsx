@@ -62,10 +62,10 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-slate-900 tracking-tight mb-6">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-slate-900 tracking-tight mb-6">
                 Unlock Your Potential with <span className="text-blue-600">Edulinker</span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 sm:mb-10 max-w-2xl mx-auto">
                 Join our global community of learners and advance your career with expert-led courses in technology, design, and business.
               </p>
             </motion.div>
@@ -75,19 +75,19 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative max-w-2xl mx-auto mb-12"
+              className="relative max-w-2xl mx-auto mb-8 sm:mb-12 px-2 sm:px-0"
             >
-              <div className="relative flex items-center w-full h-14 rounded-full bg-white shadow-lg shadow-blue-900/5 focus-within:shadow-blue-900/10 focus-within:ring-2 focus-within:ring-blue-500 overflow-hidden transition-all">
-                <div className="grid place-items-center h-full w-14 text-slate-400">
-                  <Search className="h-5 w-5" />
+              <div className="relative flex items-center w-full h-12 sm:h-14 rounded-full bg-white shadow-lg shadow-blue-900/5 focus-within:shadow-blue-900/10 focus-within:ring-2 focus-within:ring-blue-500 overflow-hidden transition-all">
+                <div className="grid place-items-center h-full w-10 sm:w-14 text-slate-400 shrink-0">
+                  <Search className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <input
-                  className="peer h-full w-full outline-none text-slate-700 pr-2 bg-transparent"
+                  className="peer h-full w-full outline-none text-slate-700 pr-2 bg-transparent text-sm sm:text-base"
                   type="text"
                   id="search"
                   placeholder="What do you want to learn today?" 
                 />
-                <button className="h-10 px-6 mr-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-colors">
+                <button className="h-9 sm:h-10 px-4 sm:px-6 mr-1.5 sm:mr-2 bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold rounded-full transition-colors shrink-0">
                   Search
                 </button>
               </div>
@@ -97,9 +97,9 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-white border-y border-slate-100">
+      <section className="py-10 sm:py-12 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -107,13 +107,13 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col items-center justify-center text-center space-y-2"
+                className="flex flex-col items-center justify-center text-center space-y-1 sm:space-y-2 p-2"
               >
-                <div className="p-3 bg-blue-50 rounded-2xl text-blue-600 mb-2">
-                  <stat.icon className="h-6 w-6" />
+                <div className="p-2.5 sm:p-3 bg-blue-50 rounded-2xl text-blue-600 mb-1 sm:mb-2">
+                  <stat.icon className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="text-3xl font-bold text-slate-900">{stat.value}</h3>
-                <p className="text-slate-500 font-medium">{stat.label}</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">{stat.value}</h3>
+                <p className="text-slate-500 text-xs sm:text-sm font-medium">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -121,19 +121,19 @@ const Home = () => {
       </section>
 
       {/* Featured Courses */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-16 sm:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 sm:mb-12 gap-4">
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">Featured Courses</h2>
-              <p className="text-slate-600 max-w-2xl">Discover our most popular courses and start learning today.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 sm:mb-4">Featured Courses</h2>
+              <p className="text-slate-600 text-sm sm:text-base max-w-2xl">Discover our most popular courses and start learning today.</p>
             </div>
-            <Link to="/courses" className="hidden md:flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
+            <Link to="/courses" className="flex items-center text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-colors">
               Explore All <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {featuredCourses.map((course, index) => (
               <motion.div
                 key={course.id}
